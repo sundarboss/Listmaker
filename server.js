@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('listmaker/build'));
 
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, 'listmaker', 'build', 'index.html'));
+        res.sendFile(path.resolve(__dirname, 'listmaker', 'build', 'index.html'));
     })
 }
 
