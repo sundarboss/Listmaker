@@ -30,10 +30,10 @@ app.use('/api/user', userRoute);
 app.use('/api/task', taskRoute);
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('../listmaker/build'));
+    app.use(express.static('listmaker/build'));
 
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '..', 'listmaker', 'build', 'index.html'));
+        res.sendFile(path.join(__dirname, 'listmaker', 'build', 'index.html'));
     })
 }
 
